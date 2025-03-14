@@ -1,4 +1,4 @@
-#Jakob Ladurner
+#Jakob
 
 # erstellen des Dicitonarys und hilfsvariablen inklusive des TypeHintings
 
