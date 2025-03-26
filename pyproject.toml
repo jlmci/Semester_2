@@ -3,13 +3,10 @@ name = "Semester_2"
 version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "J4NickH", email = "ha1220@mci4me.at"},
-    {name = "J4nickH", email = "ha1220@mci4me.at"},
+    {name = "JW", email = ""},
 ]
-dependencies = [
-    "numpy>=2.0.2",
-]
-requires-python = ">=3.9"
+dependencies = ["numpy>=2.2.4"]
+requires-python = "==3.13.*"
 readme = "README.md"
 license = {text = "MIT"}
 
