@@ -1,11 +1,14 @@
 [project]
-name = "Aufgabe_5"
+name = "Semester_2"
 version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "JH", email = ""},
+    {name = "J4NickH", email = "ha1220@mci4me.at"},
+    {name = "J4nickH", email = "ha1220@mci4me.at"},
 ]
-dependencies = []
+dependencies = [
+    "numpy>=2.0.2",
+]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
