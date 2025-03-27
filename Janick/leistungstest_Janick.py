@@ -1,3 +1,4 @@
+import numpy as np
 experimente :list= []
 first_experiment_id : int= 0 #hier beiliebige Zahl als int eintragen
 from datetime import datetime
