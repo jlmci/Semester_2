@@ -31,3 +31,37 @@ Wenn Puls die Grenzen Überschreitet wird ein Alarm ausgelöst
 
 ### Änderungsgeschichte
 - 0.01 14.03.25 Jakob W, Jakob L und Janick
+```mermaid
+classDiagram
+direction TB
+    class Address {
+	    -String street
+	    -String city
+	    -String postal_code
+	    -String country
+	    -Boolean confirmed
+	    +confirm_address()
+	    +print_label() String
+    }
+
+    class Person {
+	    -String name
+	    -String phone_number
+	    -String email
+    }
+
+    class Student {
+	    -String student_id
+	    -float average_grade
+	    +enroll_module(module_name) String
+    }
+
+    class Professor {
+	    -float salary
+	    +teach() String
+    }
+
+    Person <|-- Student
+    Person <|-- Professor
+    Person "0..1" --> "0..*" Address : lives at
+
