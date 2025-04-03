@@ -11,5 +11,8 @@ if __name__ == "__main__":
     experiment.add_subject(subject)
     experiment.add_supervisor(supervisor)
 
-
     print(experiment)
+
+
+    print(experiment.get_experiment_info())
+    
