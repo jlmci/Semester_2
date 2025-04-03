@@ -48,3 +48,4 @@ class Experiment():
           "supervisor": self.supervisor.get_supervisor_info(),
           "subject": self.subject.get_subject_info()
       }
+    #
