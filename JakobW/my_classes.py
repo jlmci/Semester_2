@@ -1,24 +1,35 @@
-class Subject():
-    def __init__(self, first_name, last, sex, age):
-      self.first_name = first_name
-      self.last_name = last
+class person():
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+
+       
+class Subject(person):
+    """A class that represents a subject in an experiment."""
+    def __init__(self, first_name, last_name, sex, birthdate):
+      super().__init__( first_name, last_name)
       self.sex = sex
-      self.age = age
+      self.__birthdate = birthdate
 
     def estimate_max_hr(self):
       """A function that estimates the maximum heart rate of a subject"""
-      from my_functions import estimate_max_hr
-      return estimate_max_hr(self.age, self.sex)
+      from my_functions import calc_estimate_max_hr, berechne_alter
+      # Geburtsdatum im Format YYYY-MM-DD 
+      # in my functions.py wurde die Funktion berechne_alter definiert
+      # die das Alter in Jahren berechnet
+      age= berechne_alter(self.__birthdate)
+      return calc_estimate_max_hr(age, self.sex)
     
     def get_subject_info(self):
       return {
           "first_name": self.first_name,
           "last_name": self.last_name,
-          "age": self.age,
+          "birthdate": self.__birthdate, #mit zwei__ wird die Variable privat gemacht
           "sex": self.sex,
-            "estimate_max_hr": self.estimate_max_hr()
+            "estimate_max_hr": self.estimate_max_hr()   # hier wird die Funktion estimate_max_hr aufgerufen
       }
-    
+
 class Supervisor():
     def __init__(self, first_name, last_name):
       self.first_name = first_name
