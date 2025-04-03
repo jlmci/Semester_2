@@ -1,10 +1,10 @@
-from my_classes import Subject, Supervisor, Experiment
+from my_classes import Subject, Supervisor, Experiment, Person
 
 if __name__ == "__main__":
 
     # Erstellen eines Leistungstests
     supervisor = Supervisor("FirstName", "LastName")
-    subject = Subject("FirstName", "LastName", "female", 30)
+    subject = Subject("FirstName", "LastName", "female", "2004-08-01")
     subject.estimate_max_hr()
 
     experiment = Experiment("Leistungstest", "2021-01-01")
