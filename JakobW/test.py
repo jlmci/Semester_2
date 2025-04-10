@@ -1,4 +1,5 @@
 from my_classes import Subject, Supervisor, Experiment, person
+from my_functions import deleteurl
 
 if __name__ == "__main__":
     """
@@ -18,8 +19,10 @@ if __name__ == "__main__":
 
     print(experiment.get_experiment_info())"""
 
-    #getapiperson=person("Jakob", "Wagner")
-   # person.put(getapiperson)
+    getapiperson=person("Ross", "Tester")
+    person.post(getapiperson)
+    #deleteurl("http://127.0.0.1:5000/person/1")
 
-    getapisubject= Subject("FirstName", "LastName", "female", "2000-01-01","Wagner@at")
-    Subject.update_email(getapisubject)
+
+
+   

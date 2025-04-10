@@ -63,3 +63,16 @@ def berechne_alter(geburtsdatum):
     geburtsdatum = datetime.strptime(geburtsdatum, "%Y-%m-%d")
     alter = heute.year - geburtsdatum.year - ((heute.month, heute.day) < (geburtsdatum.month, geburtsdatum.day))
     return alter
+
+def deleteurl(urltodelete):
+    import requests
+
+    ## Update a person
+    # Define the URL of the API
+    url = urltodelete
+
+    # Send a POST request to the API
+    response = requests.delete(url)
+
+    # Print the response from the server
+    print(response.text)
