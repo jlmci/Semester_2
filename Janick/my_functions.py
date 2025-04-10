@@ -27,7 +27,7 @@ def ask_sex() -> str:
         print("Please enter 'w' or 'm'")
         ask_sex()
 
-def estimate_max_hr(age_years : int , sex : str) -> int:
+def calc_estimate_max_hr(age_years : int , sex : str) -> int:
   """
   See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124545/ for different formulas
   """
@@ -45,7 +45,7 @@ def build_person(first_name, last_name, sex, age) -> dict:
     person_dict = { "first_name" : first_name,
              "last_name" : last_name,
              "age" : age,
-             "estimate_max_hr" : estimate_max_hr(age,sex)}
+             "estimate_max_hr" : calc_estimate_max_hr(age,sex)}
     return person_dict
 
 def build_experiment(experiment_name, date, supervisor, subject) -> dict:
@@ -56,3 +56,10 @@ def build_experiment(experiment_name, date, supervisor, subject) -> dict:
             "subject" :   subject
             }
     return experiment_dict
+
+def berechne_alter(birthdate: str) -> int:
+    from datetime import datetime
+    today = datetime.today()
+    birthdate = datetime.strptime(birthdate, "%Y-%m-%d")
+    age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+    return age
