@@ -1,14 +1,29 @@
+import requests
+import json
 class person():
     def __init__(self, first_name, last_name):
+        
         self.first_name = first_name
         self.last_name = last_name
+    def put(self):
+        # Paket mit dem Python wie ein Browser agieren kann
+      
 
+      my_data = {"id": "1","firstName": self.first_name,"lastName": self.last_name}
+      data_json = json.dumps(my_data)
+
+          # Übermittlung und speichern der response Objects
+      response = requests.post(url = 'http://127.0.0.1:5000/person/', data = data_json)
+      response.text
+      print(response.text)
 
        
 class Subject(person):
     """A class that represents a subject in an experiment."""
-    def __init__(self, first_name, last_name, sex, birthdate):
+    def __init__(self, first_name, last_name, sex, birthdate,email=None):
+
       super().__init__( first_name, last_name)
+      self.email = email
       self.sex = sex
       self.__birthdate = birthdate
 
@@ -29,6 +44,25 @@ class Subject(person):
           "sex": self.sex,
             "estimate_max_hr": self.estimate_max_hr()   # hier wird die Funktion estimate_max_hr aufgerufen
       }
+    
+    def update_email(self):
+        url = "http://127.0.0.1:5000/person/125"
+
+        # Define the data you want to send
+        data = {
+           "email": self.email,
+            
+        }
+
+        # Convert the data to JSON format
+        data_json = json.dumps(data)
+
+        # Send a POST request to the API
+        response = requests.put(url, data=data_json)
+
+        # Print the response from the server
+        print(response.text)
+              
 
 class Supervisor():
     def __init__(self, first_name, last_name):

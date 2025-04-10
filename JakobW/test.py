@@ -1,6 +1,7 @@
-from my_classes import Subject, Supervisor, Experiment
+from my_classes import Subject, Supervisor, Experiment, person
 
 if __name__ == "__main__":
+    """
 
     # Erstellen eines Leistungstests
     supervisor = Supervisor("FirstName", "LastName")
@@ -15,4 +16,10 @@ if __name__ == "__main__":
     print(experiment)
 
 
-    print(experiment.get_experiment_info())
+    print(experiment.get_experiment_info())"""
+
+    #getapiperson=person("Jakob", "Wagner")
+   # person.put(getapiperson)
+
+    getapisubject= Subject("FirstName", "LastName", "female", "2000-01-01","Wagner@at")
+    Subject.update_email(getapisubject)
