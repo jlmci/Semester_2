@@ -20,7 +20,9 @@ if __name__ == "__main__":
     print(experiment.get_experiment_info())"""
 
     getapiperson=person("Ross", "Tester")
-    person.post(getapiperson)
+    #person.post(getapiperson)
+    Subjecttoaddemail = Subject(getapiperson.first_name, getapiperson.last_name, "male", "2000-01-01") 
+    Subject.update_email(Subjecttoaddemail, "this.is.an.email@web.at", "TesRos")
     #deleteurl("http://127.0.0.1:5000/person/1")
 
 

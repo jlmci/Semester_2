@@ -27,6 +27,18 @@ class Subject(person):
       self.sex = sex
       self.__birthdate = birthdate
 
+    def update_email(self, email, id):
+       urltoupdate = "http://127.0.0.1:5000/person/{}".format(id)
+       self.email = email 
+       my_data = {"id": self.id,"firstName": self.first_name,"lastName": self.last_name, "email": self.email}
+       data_json = json.dumps(my_data)
+
+          # Übermittlung und speichern der response Objects
+       response = requests.put(url = urltoupdate, data = data_json)
+       response.text
+       print(response.text)
+
+
     def estimate_max_hr(self):
       """A function that estimates the maximum heart rate of a subject"""
       from my_functions import calc_estimate_max_hr, berechne_alter
